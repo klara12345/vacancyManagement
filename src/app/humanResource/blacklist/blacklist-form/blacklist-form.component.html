@@ -1,0 +1,31 @@
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title >Black List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form  class="example-form" [formGroup]="blackListForm">
+        <mat-label>Candidate Name</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="CandidateName" name="CandidateName" placeholder="CandidateName" >
+        </mat-form-field>
+        <mat-label>Candidate Surname</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="CandidateSurname" name="CandidateSurname" placeholder="CandidateSurname" >
+        </mat-form-field>
+        <mat-label>Reason</mat-label><br>
+        <mat-form-field class="mat-form-field-fluid">
+          <input matInput required class="control" formControlName="Reason" name="Reason" placeholder="Reason" >
+        </mat-form-field>
+        <br><br>
+        <div class="form-group">
+<!--          <button id="btn1" mat-raised-button color="primary" (click)="onSubmit()" type="submit">Save</button>-->
+          <button id="btn2" mat-raised-button color="accent" (click)="onNoClick()" tabindex="-1">Back
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

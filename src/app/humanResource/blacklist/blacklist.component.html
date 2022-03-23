@@ -1,0 +1,52 @@
+
+<div>
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-button  class="add" (click)="onAdd()">ADD</button>
+      </div>
+    </div>
+  </section>
+  <table mat-table [dataSource]="blackListData" class="mat-elevation-z8">
+    <!--  <ng-container matColumnDef="idCandidate">-->
+    <!--    <th mat-header-cell *matHeaderCellDef> ID Candidate </th>-->
+    <!--    <td mat-cell *matCellDef="let element"> {{element.id}} </td>-->
+    <!--  </ng-container>-->
+    <ng-container matColumnDef="CandidateName">
+      <th mat-header-cell *matHeaderCellDef> Candidate Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.CandidateName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CandidateSurname">
+      <th mat-header-cell *matHeaderCellDef> Candidate Surname</th>
+      <td mat-cell *matCellDef="let element"> {{element.CandidateSurname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Reason">
+      <th mat-header-cell *matHeaderCellDef> Reason </th>
+      <td mat-cell *matCellDef="let element"> {{element.reason}} </td>
+    </ng-container>
+    <ng-container matColumnDef="DatetimeCreated">
+      <th mat-header-cell *matHeaderCellDef> Datetime Created </th>
+      <td mat-cell *matCellDef="let element"> {{element.DatetimeCreated}} </td>
+    </ng-container>
+<!--    <ng-container matColumnDef="CandidateCv">-->
+<!--      <th mat-header-cell *matHeaderCellDef> Candidate CV </th>-->
+<!--      <td mat-cell *matCellDef="let element"><a href="{{element.CandidateCv}}" download >Here</a></td>-->
+<!--    </ng-container>-->
+<!--    &lt;!&ndash;Action column&ndash;&gt;-->
+<!--    <ng-container matColumnDef="action">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Action</th>-->
+<!--      <td mat-cell *matCellDef="let element">-->
+<!--        <button mat-icon-button>-->
+<!--          <mat-icon mat-fab color="primary" class="edit" aria-label="edit icon"(click)="update(element)">edit</mat-icon>-->
+<!--        </button>-->
+<!--        <button mat-icon-button>-->
+<!--          <mat-icon mat-fab color="warn" class="delete" aria-label="delete icon" (click)="deleteTable(element.id)">delete</mat-icon>-->
+<!--        </button>-->
+<!--      </td>-->
+<!--    </ng-container>-->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+

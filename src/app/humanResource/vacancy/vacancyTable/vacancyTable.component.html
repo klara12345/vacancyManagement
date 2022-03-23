@@ -1,0 +1,45 @@
+<div>
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-button class="add" (click)="onAdd()">ADD</button>
+      </div>
+    </div>
+  </section>
+  <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+    <ng-container matColumnDef="VacancyName">
+      <th mat-header-cell *matHeaderCellDef>Vacancy Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.vacancy1}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="VacancyDescription">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DateCreated">
+      <th mat-header-cell *matHeaderCellDef>Date Saved</th>
+      <td mat-cell *matCellDef="let element">{{element.dateCreated}} </td>
+    </ng-container>
+    <ng-container matColumnDef="DateSaved">
+      <th mat-header-cell *matHeaderCellDef>Date Created</th>
+      <td mat-cell *matCellDef="let element">{{element.dateSaved}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button>
+          <mat-icon matTooltip="Delete" mat-fab color="warn" class="delete" aria-label="delete icon" (click)="deleteTable(element.idVacancy)">
+            delete
+          </mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon matTooltip="Edit" mat-fab color="primary" class="edit" aria-label="edit icon" (click)="update(element.idVacancy)">edit
+          </mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
